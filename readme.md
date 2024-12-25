@@ -1,0 +1,1 @@
+g++ main.cpp -o temp_output && ./temp_output && rm temp_output
