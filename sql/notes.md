@@ -103,3 +103,9 @@ SELECT dogs.name, parks.location
 FROM dogs
 FULL JOIN parks ON dogs.park_id = parks.id;
 ```
+
+https://cs186berkeley.net/notes/note6/
+
+
+
+Query Tuning
