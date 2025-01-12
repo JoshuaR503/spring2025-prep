@@ -116,9 +116,13 @@ class LinkedList {
             size--;
         }
 
-        void deleteNode() {
+        void deleteNode(int index) {
+            if (index < 0 || index >= size) return;
             if (size == 0) deleteFirst();
+            if (index == size - 1) return deleteLast();
             
+            Node* prev = get(index - 1);
+            Node* temp = prev->next;
 
         }
 
@@ -181,6 +185,24 @@ class LinkedList {
             temp->next = newNode;
             size++;
             return true;
+        }
+
+        void reverse() {
+            Node* temp = head;
+            head = tail;
+            tail = temp;
+
+            Node* after = temp->next;
+            Node* before = nullptr;
+
+            for (int i = 0; i < size; i++)
+            {
+                after = temp->next;
+                temp->next = before;
+                before = temp;
+                temp = after;
+            }
+            
         }
 };
 
