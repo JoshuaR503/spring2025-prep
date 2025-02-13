@@ -1,119 +1,86 @@
+# Class Notes - 02/03/2025
 
+## Getting Started with DB Systems
 
+### Entity
+- **Entity**: A recognizable object, either concrete or abstract, that can be modeled and can store information.
+- **Strong Entity**: An entity that has partial participation in the relationship with other entities.
+- **Weak Entity**: An entity that has total participation in the relationship with other entities.
+- **Entity Set**: A collection of entities.
 
+### Attribute
+- **Attribute**: Defines a characteristic.
+- **Key Attribute**: An attribute whose values uniquely identify each entity in the set.
+    - **Primary Key**
+    - **Foreign Key**
+    - **Unique Attribute (UA)**
+    - **Check Constraint**
+- **Composite Attribute**: An attribute that can be divided into smaller attributes.
+- **Multivalued Attribute**: An attribute that can hold many values for a single entity.
+    - Example: Depending on how it is set up, an email can be a multivalued attribute.
+- **Derived Attribute**: Attributes that can be computed from the database and are not stored in the database.
+    - Example: The age of an employee can be computed from the date of birth.
 
+### Domain
+- **Domain**: Each attribute has a domain. A domain is not a data type.
 
+## Project Description
 
+### Functional Requirements
+- Functional requirements are a priority.
 
-02/03/2025 
+### First Normal Form (1NF)
+- You are not allowed to have groups of the same attribute/property.
 
-Getting started with DB systems
+### Data Grip
+- Learning SQL.
 
-Entitiy: recognizable object, either concrete or abstract that can be modeled, and can store information 
+### Time to Create a Functional Requirement
+- Refine who is the user: a customer, buyer, employee, etc.
 
-String entity: an entity that has partial participation in the relationship with other entitires
+### Example Use Case
+1. A registered user shall log into the system at least one time.
+     - If you do not choose the right cardinality, you could make a mistake.
+     - Every time you define an entity, it will be a table.
 
-Weak entity: an etity that has total participation in the relationsjop with other entities 
+### Relations
+- Relations are not tables by default.
+- Sometimes relations become a table, but this mostly happens in joins.
 
-Entity Set: collection of entitties 
+### Cardinalities
+- **Upper Bound**: Type of relationship.
+- **Lower Bound**: Type of entity.
+    - Example: F1 <------ weak, strong
 
-Attribute: defines a characterist 
+### Weak Entity
+- For an entity to be weak, it must have total participation in the relationship.
 
-key attributr, an attribute whose values uniquely identify each entity in the set
- 
- primary key, foreign key, UA, Check 
+### Functional Requirement and Entity Relationship
+- In databases, we need a functional requirement and an entity relationship.
+- A system can have many registered users.
 
- Compsotive attribute: an attribute that can be divided into smaller attributes
+### Example Scenario
+1. Jose logs into the airport management system.
+2. He searches for available flights to Valencia.
+3. Jose selects a suitable flight and proceeds to book a ticket.
+4. He inputs personal details and payment information.
+5. A customer can book at least one ticket.
+6. On the day of travel, Jose logs in again to check-in online.
 
- Multivaluded Attribute: an attribute that can hold many valys for a single entitiy 
+### Specialization vs. Generalization
+- **Aggregation**: One to many, many to one - the polymorphism of databases.
 
- Depending on how is set up, an email can be a mutlivalye attribute. 
+### Constraints
+- A customer shall book at least one flight ticket.
+- A flight ticket depends on the flight, with both upper and lower bounds.
+- A flight ticket can belong to one and only one user.
+- A customer shall have one payment type at a time.
+- A payment type shall be chosen by many users.
+- Customers shall check-in one and only one time into a flight.
+- A flight shall be checked in by many customers.
+- A pet shall check-in on many flights.
+- A flight shall have many pets checked in.
 
- Derived atrribute: attributes that can be computed from the data base and are not in the database. Can be computed from other attributes but thay, thesmvles are NOT in the database. An example is the age of an employee. We can use the date of birth and then compute the age of an employee. This is an example of a 
-
- Domain: each attribute has a domian. domain is not a data type. 
-
-
-
-Project Description 
-
-
-functional requirmeents are priotoy 
-
-
-FNF first normal form 
-NF1 
-
-you are not allowed to have groups of the same attribute/propertu 
-
-
-
-data grip, learning SQL 
-
-
-
-
-time to create a functional requirement 
-refine who is the user, a customer, buyer, employee, etc. 
-
-
-1. a registered user shall login into the system at least one time 
-    if you do not choose the right cardinality, you could meka e amistake 
-    every time you define an entity, it will be a table 
-
-
-relations are not tables by default 
-sometimes relations become a table, but this mostly happens in joins 
-
-
-cardinalities have upwe bound 
-lower bound <- 1
-many is never inifniit because it has a limit in database systems
-
-
-upper bound -> type of relationship
-lower bound -> type of entity F1 <------ weak, strong
-
-
-for an etitiy to be weak
-
-
-in databases, we need a functional requirmeent and an enity relationship
-
-A system can have many regustered users 
-
-
-
-
-
-1. jose logs into the airport managmeen tstem
-2. he searches for available flights to valencia 
-3. jose selects a sutable flight and proceeds to book a ticket 
-
-specialization vs. geniraliation 
-aggregation: one to many, many to one - the polyforsm of databases
-he inputs personal details and payment information 
-a customer can book at least one ticket
-a customer shal book at least one flight ticket, and a flight ticket 
-the flight ticket depends on the flight, with both 1 upper and lower bound
-the flight ticket can belong to one and only one user
-a customer shall have one payment type at the type 
-a payment type shall be chosen by many users
-
-
-6. on the day og travel, Jose logs in again to check-in online 
-
-Customers hall checkin one and only one times into a flight
-A flight shall be chekced in by many customers 
-
-should we create a booking flight system just for fun?
-
-
-
-A pet shall checkin on many flights 
-A flight shall have mqany pets checked in 
-
-the solution in this case is creating another table. 
-tables sometimes are not the answer to systems constrints because they reduce the performance of the table since you will need more joins 
-
-
+### Solution
+- The solution in this case is creating another table.
+- Tables sometimes are not the answer to system constraints because they reduce the performance of the table since you will need more joins.
